@@ -1,8 +1,8 @@
 #!/bin/bash
 
-USER=$(id -u)
+USERID=$(id -u)
 
-if [ $USER -ne 0 ]
+if [ $USERID -ne 0 ]
 then
 
     echo "Error :: The User is not a root user, u can run this command with root user"
@@ -10,3 +10,21 @@ then
  fi   
 
  yum install git -y
+
+  if [ $? -ne 0 ]
+  then
+    echo "installation failure..."
+  else
+    echo "installation sucess..."  
+
+ fi
+
+ yum install postfix -y
+ 
+  if [ $? -ne 0 ]
+  then
+    echo "installation failure..."
+  else
+    echo "installation sucess..."  
+
+ fi
