@@ -6,9 +6,9 @@ VALIDATE(){
 
 if [ $1 -ne 0 ]
  then
-    echo "installation failure..."
+    echo "$2 installation failure..."
 else 
-    echo "Installation sucees...."   
+    echo "$2 Installation sucees...."   
 fi
 
 }
@@ -21,8 +21,8 @@ fi
 
 yum install git -y
 
-VALIDATE $?
+VALIDATE $? "Git"
 
 yum install postfix -y
 
-VALIDATE $?     
+VALIDATE $?  "Postfix"   
