@@ -22,10 +22,10 @@ then
     exit 1
 fi
 
-yum install git -y
+yum install git -y &>>file.log
 
-VALIDATE $? "Git" &>>file.log
+VALIDATE $? "Git" 
 
-yum install postfix -y
+yum install postfix -y &>>file.log
 
 VALIDATE $?  "Postfix"   
