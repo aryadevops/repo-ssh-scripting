@@ -30,4 +30,4 @@ VALIDATE(){
  ## do
  ## yum install $i -y
  VALIDATE $? $i
-## done
+done
