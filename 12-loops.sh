@@ -3,6 +3,8 @@
 
 
 USERID=$(id -u)
+NUMIN=$($#) ## Number of input installations
+VALUES=$($@)
 
 if [ $USERID -ne 0 ]
 then
@@ -19,9 +21,13 @@ VALIDATE(){
         echo "Installation Success"
     fi       
 }
+ 
+ for i in {1..$NUMIN}
+ do 
+    yum install $VALUES -y
 
-for i in ("git" "postfix")
-do
-yum install $i -y
-VALIDATE $? $i
-done
+## for i in {"git" "postfix"}
+ ## do
+ ## yum install $i -y
+ VALIDATE $? $i
+## done
