@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 
 
-if [$USERID -ne 0]
+if [ $USERID -ne 0 ]
 then
     echo -e "$R ERROR$N: Please go with Sudo Access."
     exit 1
