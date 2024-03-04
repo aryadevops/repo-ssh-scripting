@@ -9,9 +9,9 @@ VALIDATE(){
 
 if [ $1 -ne 0 ]
  then
-    echo -e "$2 installation $R failure..."
+    echo -e "$2 installation $R failure$N..."
 else 
-    echo -e "$2 Installation $G sucees...."   
+    echo -e "$2 Installation $G sucees$N...."   
 fi
 
 }
