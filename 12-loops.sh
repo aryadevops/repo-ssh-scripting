@@ -22,7 +22,7 @@ VALIDATE(){
     then 
         echo -e "Installation $R Failure $N"
      else
-        echo -e "Installation $G Success $N"
+        echo -e "Installation of $i $G Success $N"
     fi       
 }
  
