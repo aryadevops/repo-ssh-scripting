@@ -1,6 +1,9 @@
 #!/bin/bash
 
-for i in {1..100}
+echo "Enter number"
+read NUMBER
+
+for i in {1..$NUMBER}  
 do 
 echo $i 
 done
