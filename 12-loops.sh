@@ -4,7 +4,7 @@
 
 USERID=$(id -u)
 NUMIN=$($#) ## Number of input installations
-VALUES=$($@)
+
 
 if [ $USERID -ne 0 ]
 then
@@ -22,12 +22,14 @@ VALIDATE(){
     fi       
 }
  
- for i in {1..$NUMIN}
+ for i in $@
  do 
-    yum install $VALUES -y
+    yum install $i -y
 
 ## for i in {"git" "postfix"}
  ## do
  ## yum install $i -y
  VALIDATE $? $i
 done
+echo "Totall number of packages $NUMIN"
+echo "The program $0 is successfully completed"
