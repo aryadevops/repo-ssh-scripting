@@ -34,7 +34,7 @@ for i in $@
     then
         echo -e "$Y $i is not installed$N. We can installing now.."
         yum install $i -y &>>$LOGFILE
-        VALIDATE $? $i
+        VALIDATE $? "$i"
         
      else   
          echo -e "$B $i is Already installed.$N"
