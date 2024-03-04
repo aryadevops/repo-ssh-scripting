@@ -2,9 +2,9 @@
 
 echo "Enter number"
 read NUMBER
-NUM=$(NUMBER)
+##NUM=$(NUMBER)
 
-for i in {1..$NUM}  
+for i in {1..$NUMBER}  
 do 
 echo $i 
 done
