@@ -1,7 +1,7 @@
 #!/bin/bash
 
 R="\e[31m"
-G="\e32m"
+G="\e[32m"
 N="\e0m"
 
 
