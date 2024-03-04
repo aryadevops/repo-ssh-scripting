@@ -1,14 +1,17 @@
 #!/bin/bash
 
+R="\e[31m"
+G="\e32m"
+N="\e0m"
 
 
 VALIDATE(){
 
 if [ $1 -ne 0 ]
  then
-    echo "$2 installation failure..."
+    echo -e "$2 installation $R failure..."
 else 
-    echo "$2 Installation sucees...."   
+    echo -e "$2 Installation $G sucees...."   
 fi
 
 }
@@ -26,6 +29,6 @@ yum install git -y &>>file.log
 
 VALIDATE $? "Git" 
 
-yum install postfix -y &>>file.log
+yum install postfixxx -y &>>file.log
 
 VALIDATE $?  "Postfix"   
