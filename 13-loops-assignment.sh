@@ -1,6 +1,10 @@
 #!/bin/bash
 
 USERID=$(id -u)
+DATE=$(date +%F)
+SCRIPTNAME=$0
+LOGDIR=home/centos/shell-script-logs
+LOGFILE=$LOGDIR/$SCRIPTNAME-$DATE.log
 R="\e[31m"
 N="\e[0m"
 G="\e[32m"
@@ -11,6 +15,7 @@ VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo -e " Installation of $2 is $R Failure...$N"
+        exit 1
     else
        echo -e " Installation of $2 is $G Success...$N"  
     fi     
@@ -28,7 +33,7 @@ for i in $@
     if [ $? -ne 0 ]
     then
         echo -e "$Y $i is not installed$N. We can installing now.."
-        yum install $i -y
+        yum install $i -y &>>$LOGFILE
         VALIDATE $? $i
         exit 1
      else   
